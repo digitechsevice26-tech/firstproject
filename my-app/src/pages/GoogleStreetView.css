@@ -1,0 +1,466 @@
+/* Google Street View Component Styles */
+
+/* Main Container */
+.street-view-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header Styles */
+.street-view-header {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  padding: 40px 25px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+
+.street-view-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 2px solid #e1e5e9;
+}
+
+.search-input {
+  flex: 1;
+  padding: 15px 25px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46a3);
+  transform: scale(1.05);
+}
+
+/* Search Results Dropdown */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 8px;
+  border: 2px solid #e1e5e9;
+}
+
+.search-result-item {
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f3f4f6;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-result-item:hover {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: #667eea;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item.no-results {
+  cursor: default;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+}
+
+.search-result-item.no-results:hover {
+  background: transparent;
+  color: #6b7280;
+}
+
+/* Categories Section with Side Navigation */
+.categories-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 25px 60px;
+  background: linear-gradient(90deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+/* Scroll Navigation Buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46a3);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.scroll-btn.left {
+  left: 15px;
+}
+
+.scroll-btn.right {
+  right: 15px;
+}
+
+.categories-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+.categories-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-btn {
+  flex-shrink: 0;
+  padding: 12px 25px;
+  border: 2px solid #e1e5e9;
+  background: white;
+  color: #555;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.category-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.category-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Business Section */
+.business-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.business-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e1e5e9;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.business-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.business-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.business-card:hover .business-image img {
+  transform: scale(1.05);
+}
+
+.business-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.business-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Feature Badges */
+.business-features {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.feature-badge {
+  padding: 4px 12px;
+  border-radius: 15px;
+  fontSize: 12px;
+  fontWeight: 600;
+  color: white;
+}
+
+.feature-badge.gsv {
+  background: #22c55e;
+}
+
+.feature-badge.nfc {
+  background: #3b82f6;
+}
+
+.feature-badge.tour3d {
+  background: #f59e0b;
+}
+
+/* Default Message */
+.default-message {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.default-message h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.default-message p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+.default-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .street-view-container {
+    padding: 15px;
+  }
+  
+  .street-view-header {
+    padding: 30px 15px;
+  }
+  
+  .street-view-header h1 {
+    font-size: 32px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .search-bar {
+    margin: 0 10px;
+  }
+  
+  .search-container {
+    max-width: 90%;
+  }
+  
+  .categories-section {
+    padding: 15px 50px;
+  }
+  
+  .scroll-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .scroll-btn.left {
+    left: 10px;
+  }
+  
+  .scroll-btn.right {
+    right: 10px;
+  }
+  
+  .categories-scroll {
+    gap: 10px;
+  }
+  
+  .category-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  
+  .business-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .search-results {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .street-view-header h1 {
+    font-size: 28px;
+  }
+  
+  .search-input {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .search-btn {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+  
+  .categories-section {
+    padding: 10px 45px;
+  }
+  
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .scroll-btn.left {
+    left: 8px;
+  }
+  
+  .scroll-btn.right {
+    right: 8px;
+  }
+  
+  .default-message {
+    padding: 40px 15px;
+  }
+  
+  .default-message h3 {
+    font-size: 20px;
+  }
+  
+  .search-results {
+    max-height: 180px;
+  }
+  
+  .search-result-item {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

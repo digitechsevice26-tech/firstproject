@@ -1,0 +1,265 @@
+/* Reset */
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+}
+
+/* Dashboard container */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo (left side) */
+.logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Company name (center) */
+.company-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Menu Button (right side) */
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Center main content */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Button Gradients */
+.blue-gradient {
+  border-image: linear-gradient(90deg, #00a8ff, #0078ff) 1;
+  color: #00a8ff;
+}
+
+.blue-gradient:hover {
+  background: linear-gradient(90deg, #00a8ff, #0078ff);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+}
+
+.purple-gradient {
+  border-image: linear-gradient(90deg, #8e44ad, #9b59b6) 1;
+  color: #8e44ad;
+}
+
+.purple-gradient:hover {
+  background: linear-gradient(90deg, #8e44ad, #9b59b6);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+.pink-gradient {
+  border-image: linear-gradient(90deg, #e91e63, #f06292) 1;
+  color: #e91e63;
+}
+
+.pink-gradient:hover {
+  background: linear-gradient(90deg, #e91e63, #f06292);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+.green-gradient {
+  border-image: linear-gradient(90deg, #27ae60, #2ecc71) 1;
+  color: #27ae60;
+}
+
+.green-gradient:hover {
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.orange-gradient {
+  border-image: linear-gradient(90deg, #ff9800, #ff5722) 1;
+  color: #ff9800;
+}
+
+.orange-gradient:hover {
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Logout Button Specific Styling */
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 35px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #dc3545;
+  background: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #dc3545, #bd2130) 1;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #dc3545, #bd2130);
+  color: white;
+  transform: translateX(-5px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Sidebar (Right side) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  height: 100%;
+  width: 350px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 2000;
+  overflow-y: auto;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 80px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 35px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-link:hover {
+  transform: translateX(-5px);
+}
+
+/* Overlay when Sidebar is Open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-name {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 300px;
+    right: -300px;
+  }
+
+  .gradient-btn,
+  .menu-link,
+  .logout-btn {
+    min-width: auto;
+    padding: 12px 25px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 12px;
+  }
+
+  .sidebar {
+    width: 280px;
+    right: -280px;
+  }
+
+  .sidebar-content {
+    padding: 70px 20px 20px 20px;
+  }
+}
